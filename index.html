@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!----======== CSS ======== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+
+    <title>THoFunCamp 2024 Registration</title>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>THoFunCamp 2024 Registration</header>
+      <br />
+      <div class="message">
+        <div class="success" id="success">
+          <iconify-icon icon="mdi:check-bold"></iconify-icon> You have successfully completed Step 1 of the registration
+        </div>
+        <div class="danger" id="danger">
+          <iconify-icon icon="fa:times"></iconify-icon> Email already registered
+        </div>
+
+        <div class="danger2" id="danger2">
+          <iconify-icon icon="fa:times"></iconify-icon>
+          Registration Failed, Check All Fields and Try Again!
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <form>
+        <div class="form first">
+          <div class="details personal">
+            <div class="fields">
+              <div class="input-field">
+                <label>Email</label>
+                <input
+                  type="text"
+                  placeholder="Enter your email"
+                  name="email"
+                  id="email"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label>First Name</label>
+                <input
+                  type="text"
+                  placeholder="Enter your First Name"
+                  required
+                  name="firstname"
+                  id="firstname"
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Last Name</label>
+                <input
+                  type="text"
+                  placeholder="Enter your  Last Name"
+                  required
+                  name="lastname"
+                  id="lastname"
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Date of Birth</label>
+                <input
+                  type="date"
+                  placeholder="Enter birth date"
+                  name="date_of_birth"
+                  id="date_of_birth"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Mobile Number</label>
+                <input
+                  type="number"
+                  placeholder="Enter mobile number"
+                  required
+                  name="phone"
+                  id="phone"
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Gender</label>
+                <select required name="gender" id="gender">
+                  <option disabled selected>Select gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+
+              <div class="input-field input-field-long">
+                <label>Address</label>
+                <input
+                  type="text"
+                  placeholder="Enter your Address"
+                  name="address"
+                  id="address"
+                  required
+                />
+              </div>
+
+              <div class="input-field input-field-long">
+                <label>School/University/Alma Mata</label>
+                <input
+                  type="text"
+                  placeholder="Enter School/University/Alma Mata"
+                  required
+                  name="School"
+                  id="School"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="details ID">
+            <div class="fields">
+              <div class="input-field">
+                <label>State Of Residence</label>
+                <select
+                  required
+                  name="State_of_residence"
+                  id="State_of_residence"
+                >
+                  <option disabled selected>Select State</option>
+                  <option>Abia</option>
+                  <option>Adamawa</option>
+                  <option>Anambra</option>
+                  <option>Abuja</option>
+                  <option>Akwa Ibom</option>
+                  <option>Bauchi</option>
+                  <option>Bayelsa</option>
+                  <option>Benue</option>
+                  <option>Borno</option>
+                  <option>Cross River</option>
+                  <option>Delta</option>
+                  <option>Ebonyi</option>
+                  <option>Edo</option>
+                  <option>Enugu</option>
+                  <option>Gombe</option>
+                  <option>Imo</option>
+                  <option>Jigawa</option>
+                  <option>Kaduna</option>
+                  <option>Kano</option>
+                  <option>Kogi</option>
+                  <option>Kwara</option>
+                  <option>Lagos</option>
+                  <option>Nasarawa</option>
+                  <option>Niger</option>
+                  <option>Ogun</option>
+                  <option>Ondo</option>
+                  <option>Osun</option>
+                  <option>Oyo</option>
+                  <option>Plateau</option>
+                  <option>Rivers</option>
+                  <option>Sokoto</option>
+                  <option>Taraba</option>
+                  <option>Yobe</option>
+                  <option>Zamfara</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Educational Level</label>
+                <select required name="education" id="education">
+                  <option disabled selected>Select Level of Education</option>
+                  <option>No Education</option>
+                  <option>Primary</option>
+                  <option>Secondary</option>
+                  <option>Undergraduate</option>
+                  <option>Graduate</option>
+                  <option>Post Graduate</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Region</label>
+                <select required name="region" id="region">
+                  <option disabled selected>Select Region</option>
+                  <option>South-East</option>
+                  <option>South-South</option>
+                  <option>South-West</option>
+                  <option>North-East</option>
+                  <option>North-West</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="details ID">
+            <div class="fields"></div>
+          </div>
+
+          <button class="nextBtn" type="text">
+            <span class="btnText">Next</span>
+            <i class="uil uil-navigator"></i>
+          </button>
+        </div>
+
+        <div class="form second">
+          <div class="details address">
+            <div class="fields">
+              <div class="input-field">
+                <label>Are you a born again christian?</label>
+                <select
+                  required
+                  name="are_you_born_again"
+                  id="are_you_born_again"
+                >
+                  <option disabled selected>Select One</option>
+                  <option>Yes I am</option>
+                  <option>No I am not</option>
+                  <option>I am not sure </option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Have You Been Baptized by the Holy Spirit?</label>
+                <select required name="are_you_baptized" id="are_you_baptized">
+                  <option disabled selected>Select One</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>How Did You Hear About Registration?</label>
+                <select
+                  required
+                  name="how_you_heard_about_camp_registration"
+                  id="how_you_heard_about_camp_registration"
+                >
+                  <option disabled selected>How did you hear about us?</option>
+                  <option>Facebook</option>
+                  <option>Instagram</option>
+                  <option>Website</option>
+                  <option>Ambassadors</option>
+                  <option>Church</option>
+                  <option>School</option>
+                  <option>TSO CDP</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>How many THoFUNCamp's have you attended?</label>
+                <select
+                  required
+                  name="no_of_camp_attended"
+                  id="no_of_camp_attended"
+                >
+                  <option disabled selected>Select One</option>
+                  <option>None</option>
+                  <option>Once</option>
+                  <option>Two Times</option>
+                  <option>Three Times</option>
+                  <option>Four and Above</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Religion</label>
+                <select required name="religion" id="religion">
+                  <option disabled selected>Select One</option>
+                  <option>Christianity</option>
+                  <option>Islam</option>
+                  <option>Buddhism</option>
+                  <option>Hinduism</option>
+                  <option>Judaism</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Who do you Currently Live With?</label>
+                <select
+                  required
+                  name="who_do_you_stay_with"
+                  id="who_do_you_stay_with"
+                >
+                  <option disabled selected>Select One</option>
+                  <option>Parents</option>
+                  <option>Guardian</option>
+                  <option>Relative</option>
+                  <option>Alone</option>
+                  <option>Others</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Email Of Guardian</label>
+                <input
+                  type="email"
+                  placeholder="Enter Your Guardian's Email address"
+                  name="email_of_guardian"
+                  id="email_of_guardian"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Name Of Guardian/Parents</label>
+                <input
+                  type="text"
+                  placeholder="Enter Name of Guardian/Parents"
+                  id="name_of_guardian"
+                  name="name_of_guardian"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label>Phone Number Of Guardian</label>
+                <input
+                  type="number"
+                  placeholder="Enter Your Guardian's Phone number"
+                  name="phone_of_guardian"
+                  id="phone_of_guardian"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="details family">
+            <div class="fields">
+              <div class="input-field">
+                <label>Do you Have any Family Concerns ?</label>
+                <select
+                  required
+                  name="do_you_have_any_family_concerns"
+                  id="do_you_have_any_family_concerns"
+                >
+                  <option disabled selected>Select One</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div>
+
+              <div class="input-field input-field-long1">
+                <label>What Are you most Afraid of?</label>
+                <input
+                  type="text"
+                  placeholder="Enter Your Answer"
+                  name="what_are_you_most_afraid_of"
+                  id="what_are_you_most_afraid_of"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="buttons">
+              <div class="backBtn">
+                <i class="uil uil-navigator"></i>
+                <span class="btnText">Back</span>
+              </div>
+
+              <button class="sumbit" type="submit" id="submitBtn">
+                <span class="btnText">Submit</span>
+                <!-- <i class="uil uil-navigator"></i> -->
+              </button>
+              <i class="fa-solid fa-user"></i>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
